@@ -1,7 +1,7 @@
 # PAI最終課題_言葉で指示すると学習した動作で応える挨拶ロボット
 
 Physical AI 応用編1 最終課題の提出コードです。
-Gazebo上のCRANE+ V2に, 人間のテレオペデモから模倣学習した3つの動作（お辞儀 `bow` / 手を振る `wave` / うなずく `nod`）を覚えさせ, 文字列コマンドで切り替えて実行します。 さらに, 方策への観測入力を改ざんしたときの頑健性を検証します。
+Gazebo上のCRANE+V2に, 人間のテレオペデモから模倣学習した3つの動作（お辞儀 `bow` / 手を振る `wave` / うなずく `nod`）を覚えさせ, 文字列コマンドで切り替えて実行します。 さらに, 方策への観測入力を改ざんしたときの頑健性を検証します。
 
 - 動画：https://youtu.be/oGRt4kKm6fg
 - 環境：`airobotbook/ros2-desktop-ai-robot-book-humble` コンテナ（ROS 2 Humble + Gazebo）,   [matsuolab/pai_training](https://github.com/matsuolab/pai_training),   [matsuolab/physicalai_teleop](https://github.com/matsuolab/physicalai_teleop), CPU のみ
@@ -16,7 +16,7 @@ nodes/
 configs/{bow,wave,nod}/   pai_training用の変換, 学習設定
 ```
 
-## 再現手順（pai_training がセットアップ済みのコンテナ内）
+## 再現手順（pai_trainingがセットアップ済みのコンテナ内）
 
 1. データ収集：`ros2 launch crane_plus_gazebo crane_plus_with_table.launch.py`と`ros2 run physicalai_teleop teleop_keyboard`を起動し、動作ごとに`ros2 bag record -a -o ~/dataset/rosbags/<gesture>/epN`で10エピソードを記録
 2. 変換・学習
