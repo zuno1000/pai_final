@@ -18,7 +18,7 @@ configs/{bow,wave,nod}/   pai_training用の変換, 学習設定
 
 ## 再現手順（pai_trainingがセットアップ済みのコンテナ内）
 
-1. データ収集：`ros2 launch crane_plus_gazebo crane_plus_with_table.launch.py`と`ros2 run physicalai_teleop teleop_keyboard`を起動し、動作ごとに`ros2 bag record -a -o ~/dataset/rosbags/<gesture>/epN`で10エピソードを記録
+1. データ収集：`ros2 launch crane_plus_gazebo crane_plus_with_table.launch.py`と`ros2 run physicalai_teleop teleop_keyboard`を起動し, 動作ごとに`ros2 bag record -a -o ~/dataset/rosbags/<gesture>/epN`で10エピソードを記録
 2. 変換・学習
    ```bash
    cp configs/wave/* ~/pai_training/configs/
